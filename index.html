@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developed by Basit</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Archivo Black', sans-serif;
+      cursor: none;
+    }
+
+    /* ===== Floating Black Orb ===== */
+    .orb {
+      position: absolute;
+      width: min(70vw, 650px);
+      height: min(70vw, 650px);
+      background: #000;
+      border-radius: 50%;
+      animation: floatOrb 14s infinite ease-in-out;
+      z-index: 1;
+    }
+
+    @keyframes floatOrb {
+      0% {
+        transform: translate(-20%, -20%) scale(1);
+        border-radius: 50%;
+      }
+      33% {
+        transform: translate(20%, 0%) scale(1.1);
+        border-radius: 45% 55% 60% 40% / 40% 50% 60% 50%;
+      }
+      66% {
+        transform: translate(-10%, 20%) scale(0.9);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      100% {
+        transform: translate(-20%, -20%) scale(1);
+        border-radius: 50%;
+      }
+    }
+
+    /* ===== Content ===== */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      mix-blend-mode: difference;
+      color: #fff;
+      padding: 20px;
+      max-width: 900px;
+    }
+
+    .name {
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      letter-spacing: -0.08em;
+      line-height: 0.95;
+    }
+
+    .role {
+      font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+      letter-spacing: 0.5em;
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-family: sans-serif;
+    }
+
+    .line {
+      width: 120px;
+      height: 4px;
+      background: #fff;
+      margin: 40px auto;
+    }
+
+    .status {
+      font-size: clamp(0.75rem, 1.1vw, 1rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      opacity: 0.9;
+      line-height: 1.8;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      position: absolute;
+      bottom: 32px;
+      font-size: clamp(0.55rem, 0.75vw, 0.8rem);
+      letter-spacing: 0.4em;
+      font-family: sans-serif;
+      mix-blend-mode: difference;
+      color: #fff;
+      opacity: 0.6;
+      animation: footerPulse 6s ease-in-out infinite;
+      z-index: 2;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    @keyframes footerPulse {
+      0% { opacity: 0.35; }
+      50% { opacity: 0.9; }
+      100% { opacity: 0.35; }
+    }
+
+    /* ===== Mobile Tweaks ===== */
+    @media (max-width: 480px) {
+      body {
+        cursor: default;
+      }
+
+      .line {
+        margin: 28px auto;
+      }
+
+      footer {
+        bottom: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="orb"></div>
+
+  <div class="content">
+    <div class="name">Syed Abdul Basit</div>
+    <div class="role">Web Developer</div>
+
+    <div class="line"></div>
+
+    <div class="status">
+      Portfolio currently under development.
+    </div>
+  </div>
+
+  <footer>
+    DEVELOPEDBYBASIT.ME
+  </footer>
+
+</body>
+</html>
+     
